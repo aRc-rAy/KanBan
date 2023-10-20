@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/KanBan/static/css/main.3082c981.css",
-    "main.js": "/KanBan/static/js/main.eebaef42.js",
+    "main.js": "/KanBan/static/js/main.25e63601.js",
     "index.html": "/KanBan/index.html",
     "main.3082c981.css.map": "/KanBan/static/css/main.3082c981.css.map",
-    "main.eebaef42.js.map": "/KanBan/static/js/main.eebaef42.js.map"
+    "main.25e63601.js.map": "/KanBan/static/js/main.25e63601.js.map"
   },
   "entrypoints": [
     "static/css/main.3082c981.css",
-    "static/js/main.eebaef42.js"
+    "static/js/main.25e63601.js"
   ]
 }
