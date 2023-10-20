@@ -1,0 +1,195 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Roboto", sans-serif;
+}
+
+/* -----------> KanBan navBar <------------ */
+.navBar {
+	background-color: rgb(255, 253, 253);
+	width: 100vw;
+	height: 8vh;
+	padding-left: 3%;
+	padding-top: 2vh;
+	position: relative;
+}
+.navBar button {
+	background-color: white;
+}
+.displaybox {
+	background-color: rgb(255, 255, 255);
+	width: 20vw;
+	height: 10vh;
+	z-index: 100000;
+	border-radius: 6px;
+	display: flex;
+	flex-direction: column;
+	box-shadow: 0px 0px 2px 0.5px rgb(175, 175, 175);
+}
+.displayButton {
+	width: 6%;
+	font-size: 16px;
+	display: flex;
+	text-align: center;
+	border: 0.1px solid rgb(192, 192, 192);
+	padding: 2px;
+	border-radius: 4px;
+	box-shadow: 0px 0px 2px 0.1px rgb(175, 175, 175);
+}
+.displayItem {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	height: 50%;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.displayItem label {
+	color: rgb(98, 98, 98);
+}
+.displayItem select {
+	width: 40%;
+}
+
+/* -----------> KanBan Body <------------ */
+.body {
+	background-color: rgb(241, 244, 246);
+	width: 100vw;
+	height: 92vh;
+}
+.boardBody {
+	width: 100%;
+	height: 100%;
+	display: grid;
+	padding: 10px 10px 10px 10px;
+	grid-template-columns: repeat(5, 1fr);
+}
+.groupBox {
+	padding: 15px;
+	margin: 5px;
+	/* background-color: blue; */
+	font-size: 12px;
+}
+
+.groupTitle {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	height: 8vh;
+	/* background-color: red; */
+}
+.titleLeft {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	width: 70%;
+}
+.titleRight {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+	width: 30%;
+}
+.titleItem {
+	margin: 4px;
+}
+
+.card {
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	width: 100%;
+	padding: 8px;
+	margin-top: 8px;
+	background-color: rgb(255, 255, 255);
+	border-radius: 5px;
+	height: 12vh;
+	box-shadow: 0px 0px 3px 0px rgb(175, 175, 175);
+}
+.cardTop {
+	font-size: 12px;
+	height: 30%;
+	display: flex;
+	justify-content: space-between;
+	color: rgb(149, 148, 148);
+	/* background-color: blue; */
+}
+.logo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 18px;
+	height: 18px;
+	position: relative;
+	font-size: 16px;
+}
+.status {
+	background-color: red;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 7px;
+	height: 7px;
+	z-index: 100;
+	border: 1.5px solid rgb(255, 255, 255);
+	border-radius: 50%;
+}
+.online {
+	background-color: rgb(242, 17, 10);
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+}
+.offline {
+	background-color: rgb(171, 171, 171);
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+}
+.cardTitle {
+	padding-left: 0px;
+	padding-right: 20px;
+	height: 45%;
+	font-weight: 500;
+	font-size: small;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.tick {
+	width: 6%;
+	height: 100%;
+	margin-right: 5px;
+}
+.circle {
+	width: 13px;
+	height: 13px;
+	background-color: rgb(251, 251, 251);
+	border: 1px solid rgb(137, 137, 137);
+	border-radius: 50%;
+}
+.userTitle {
+	display: flex;
+	flex-direction: row;
+}
+.cardBottom {
+	height: 25%;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: baseline;
+}
+.cardBottom h3 {
+	margin-right: 15px;
+}
+.cardBottom p {
+	font-size: 12px;
+	border: 0px solid rgb(66, 66, 66);
+	padding: 1px;
+	border-radius: 3px;
+	box-shadow: 0px 0px 1px 0.2px rgb(175, 175, 175);
+	color: rgb(133, 132, 132);
+}
