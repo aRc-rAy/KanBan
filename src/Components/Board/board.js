@@ -6,6 +6,7 @@ import Priority from "../Priority/Priority";
 
 const Board = () => {
 	let initialDisplay = 0;
+
 	const [display, setdisplay] = useState(initialDisplay);
 	const [state, setstate] = useState("Status");
 	const [order, setOrder] = useState("Title");
@@ -23,6 +24,7 @@ const Board = () => {
 			});
 		}
 		setData(merged);
+		localStorage.setItem("Data", JSON.stringify(merged));
 	};
 	const fetchData = async () => {
 		const { data } = await axios.get(
@@ -34,6 +36,21 @@ const Board = () => {
 		MergeData();
 		setIsDataFetched(true);
 	};
+	// loadFirstIfPresent
+	useEffect(() => {
+		const savedData = localStorage.getItem("Data");
+		if (savedData !== null) {
+			setData(JSON.parse(savedData));
+		}
+		const savedState = localStorage.getItem("State");
+		if (savedState != null) {
+			setstate(JSON.parse(savedState));
+		}
+		const savedOrder = localStorage.getItem("Order");
+		if (savedOrder != null) {
+			setOrder(JSON.parse(savedOrder));
+		}
+	}, []);
 
 	useEffect(() => {
 		fetchData();
@@ -41,9 +58,11 @@ const Board = () => {
 
 	const handleStateChange = (e) => {
 		setstate(e.target.value);
+		localStorage.setItem("State", JSON.stringify(e.target.value));
 	};
 	const handleOrderChange = (e) => {
 		setOrder(e.target.value);
+		localStorage.setItem("Order", JSON.stringify(e.target.value));
 	};
 
 	const handleDisplay = () => {
@@ -90,19 +109,19 @@ const Board = () => {
 					<></>
 				)}
 			</div>
-			{tickets.length ? (
-				<div className="body">
-					{state === "Status" ? (
-						<Status data={data} order={order} />
-					) : state === "Priority" ? (
-						<Priority data={data} order={order} />
-					) : (
-						<Users data={data} order={order} />
-					)}
-				</div>
-			) : (
+			{/* {tickets.length ? ( */}
+			<div className="body">
+				{state === "Status" ? (
+					<Status data={data} order={order} />
+				) : state === "Priority" ? (
+					<Priority data={data} order={order} />
+				) : (
+					<Users data={data} order={order} />
+				)}
+			</div>
+			{/* ) : (
 				<div>Loading</div>
-			)}
+			)} */}
 		</div>
 	);
 };
